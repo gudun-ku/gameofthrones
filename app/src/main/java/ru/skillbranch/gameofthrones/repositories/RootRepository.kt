@@ -3,7 +3,7 @@ package ru.skillbranch.gameofthrones.repositories
 import androidx.annotation.VisibleForTesting
 import ru.skillbranch.gameofthrones.data.local.entities.CharterFull
 import ru.skillbranch.gameofthrones.data.local.entities.CharterItem
-import ru.skillbranch.gameofthrones.data.remote.res.CharterRes
+import ru.skillbranch.gameofthrones.data.remote.res.CharacterRes
 import ru.skillbranch.gameofthrones.data.remote.res.HouseRes
 
 object RootRepository {
@@ -33,7 +33,7 @@ object RootRepository {
      * @param result - колбек содержащий в себе список данных о доме и персонажей в нем (Дом - Список Персонажей в нем)
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    fun getNeedHouseWithCharters(vararg houseNames: String, result : (houses : List<Pair<HouseRes, List<CharterRes>>>) -> Unit) {
+    fun getNeedHouseWithCharacters(vararg houseNames: String, result : (houses : List<Pair<HouseRes, List<CharacterRes>>>) -> Unit) {
         //TODO implement me
     }
 
@@ -50,12 +50,12 @@ object RootRepository {
 
     /**
      * Запись данных о пересонажах в DB
-     * @param charters - Список персонажей (модель CharterRes - модель ответа из сети)
+     * @param charters - Список персонажей (модель CharacterRes - модель ответа из сети)
      * необходимо произвести трансформацию данных
      * @param complete - колбек о завершении вставки записей db
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    fun insertCharters(charters : List<CharterRes>, complete: () -> Unit) {
+    fun insertCharacters(characters : List<CharacterRes>, complete: () -> Unit) {
         //TODO implement me
     }
 
