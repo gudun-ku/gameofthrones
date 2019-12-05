@@ -1,4 +1,7 @@
 package ru.skillbranch.gameofthrones.repositories
 
-class CharacterDAO {
+import androidx.room.Dao
+
+@Dao
+interface CharacterDAO {
 }

@@ -1,12 +1,15 @@
 package ru.skillbranch.gameofthrones.repositories
 
 import androidx.annotation.VisibleForTesting
-import ru.skillbranch.gameofthrones.data.local.entities.CharterFull
-import ru.skillbranch.gameofthrones.data.local.entities.CharterItem
+import ru.skillbranch.gameofthrones.data.local.entities.CharacterFull
+import ru.skillbranch.gameofthrones.data.local.entities.CharacterItem
+import ru.skillbranch.gameofthrones.data.remote.RemoteStorage
 import ru.skillbranch.gameofthrones.data.remote.res.CharacterRes
 import ru.skillbranch.gameofthrones.data.remote.res.HouseRes
 
 object RootRepository {
+
+    lateinit var remoteStorage: RemoteStorage
 
     /**
      * Получение данных о всех домах
@@ -14,7 +17,16 @@ object RootRepository {
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun getAllHouses(result : (houses : List<HouseRes>) -> Unit) {
-        //TODO implement me
+
+        val resultList: MutableList<HouseRes> = mutableListOf()
+        var page = 0
+        while (true) {
+            val resultData = remoteStorage.getAllHouses(++page)
+            if (!resultData.isNullOrEmpty()) {
+                resultList.addAll(resultData)
+            }
+        }
+        result(resultList)
     }
 
     /**
@@ -75,7 +87,7 @@ object RootRepository {
      * @param result - колбек содержащий в себе список краткой информации о персонажах дома
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    fun findChartersByHouseName(name : String, result: (charters : List<CharterItem>) -> Unit) {
+    fun findChartersByHouseName(name : String, result: (charters : List<CharacterItem>) -> Unit) {
         //TODO implement me
     }
 
@@ -86,7 +98,7 @@ object RootRepository {
      * @param result - колбек содержащий в себе полную информацию о персонаже
      */
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-    fun findCharterFullById(id : String, result: (charter : CharterFull) -> Unit) {
+    fun findCharterFullById(id : String, result: (charter : CharacterFull) -> Unit) {
         //TODO implement me
     }
 

@@ -2,7 +2,6 @@ package ru.skillbranch.gameofthrones.repositories
 
 import android.content.Context
 import androidx.room.*
-import androidx.room.TypeConverters
 import ru.skillbranch.gameofthrones.data.local.entities.House
 
 const val DATABASE_SCHEMA_VERSION = 1
@@ -10,7 +9,7 @@ const val DATABASE_NAME = "local-db"
 
 @Database(version = DATABASE_SCHEMA_VERSION,
         entities = [House::class, Character::class])
-@TypeConverters(ListFromString::class)
+@TypeConverters(Converters::class)
 abstract class GoTDatabase: RoomDatabase() {
 
     // Insert DAO below
@@ -35,8 +34,7 @@ abstract class GoTDatabase: RoomDatabase() {
         }
     }
 }
-
-class ListFromString {
+object Converters {
 
     @TypeConverter
     fun fromString(value: String): List<String> = value.split(";")

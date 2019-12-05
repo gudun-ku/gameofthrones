@@ -1,4 +1,7 @@
 package ru.skillbranch.gameofthrones.repositories
 
-class HouseDAO {
+import androidx.room.Dao
+
+@Dao
+interface HouseDAO {
 }

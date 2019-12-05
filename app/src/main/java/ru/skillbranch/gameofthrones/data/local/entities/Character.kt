@@ -1,30 +1,48 @@
 package ru.skillbranch.gameofthrones.data.local.entities
 
-import androidx.room.TypeConverter
-import ru.skillbranch.gameofthrones.repositories.ListFromString
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import ru.skillbranch.gameofthrones.repositories.Converters
 
+@Entity
 data class Character(
+    @PrimaryKey
     val id: String,
     val name: String,
     val gender: String,
     val culture: String,
     val born: String,
     val died: String,
+    @TypeConverters(Converters::class)
     val titles: List<String> = listOf(),
+    @TypeConverters(Converters::class)
     val aliases: List<String> = listOf(),
     val father: String, //rel
     val mother: String, //rel
     val spouse: String,
     val houseId: String//rel
-)
+){
+    constructor():this(
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        listOf(),
+        listOf(),
+        "",
+        "",
+        "",
+        "")
+}
 
 data class CharacterItem(
     val id: String,
     val house: String, //rel
     val name: String,
-    @TypeConverter(ListFromString::class)
     val titles: List<String>,
-    @TypeConverter(ListFromString::class)
     val aliases: List<String>
 )
 
