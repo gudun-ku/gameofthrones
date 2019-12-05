@@ -1,11 +1,8 @@
-package ru.skillbranch.gameofthrones
+package ru.skillbranch.gameofthrones.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import ru.skillbranch.gameofthrones.data.remote.res.CharacterRes
-import ru.skillbranch.gameofthrones.data.remote.res.HouseRes
+import ru.skillbranch.gameofthrones.R
 import ru.skillbranch.gameofthrones.repositories.RootRepository
 
 class MainActivity : AppCompatActivity() {
