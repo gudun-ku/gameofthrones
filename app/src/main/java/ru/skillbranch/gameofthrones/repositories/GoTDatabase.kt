@@ -3,6 +3,7 @@ package ru.skillbranch.gameofthrones.repositories
 import android.content.Context
 import androidx.room.*
 import ru.skillbranch.gameofthrones.data.local.entities.House
+import ru.skillbranch.gameofthrones.data.local.entities.Character
 
 const val DATABASE_SCHEMA_VERSION = 1
 const val DATABASE_NAME = "local-db"

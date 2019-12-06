@@ -11,4 +11,5 @@ object AppConfig {
         "House Nymeros Martell of Sunspear"
     )
     const val BASE_URL = "https://www.anapioficeandfire.com/api/"
+    const val SPLASH_TIME_OUT = 5L
 }

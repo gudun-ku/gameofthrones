@@ -1,0 +1,198 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ddb1b7a76c97beee2ff6a6587ba2d8e0",
+    "entities": [
+      {
+        "tableName": "houses",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `region` TEXT NOT NULL, `coatOfArms` TEXT NOT NULL, `words` TEXT NOT NULL, `titles` TEXT NOT NULL, `seats` TEXT NOT NULL, `currentLord` TEXT NOT NULL, `heir` TEXT NOT NULL, `overlord` TEXT NOT NULL, `founded` TEXT NOT NULL, `founder` TEXT NOT NULL, `diedOut` TEXT NOT NULL, `ancestralWeapons` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "region",
+            "columnName": "region",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coatOfArms",
+            "columnName": "coatOfArms",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "words",
+            "columnName": "words",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titles",
+            "columnName": "titles",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seats",
+            "columnName": "seats",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentLord",
+            "columnName": "currentLord",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "heir",
+            "columnName": "heir",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "overlord",
+            "columnName": "overlord",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "founded",
+            "columnName": "founded",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "founder",
+            "columnName": "founder",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diedOut",
+            "columnName": "diedOut",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ancestralWeapons",
+            "columnName": "ancestralWeapons",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "characters",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `gender` TEXT NOT NULL, `culture` TEXT NOT NULL, `born` TEXT NOT NULL, `died` TEXT NOT NULL, `titles` TEXT NOT NULL, `aliases` TEXT NOT NULL, `father` TEXT NOT NULL, `mother` TEXT NOT NULL, `spouse` TEXT NOT NULL, `houseId` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gender",
+            "columnName": "gender",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "culture",
+            "columnName": "culture",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "born",
+            "columnName": "born",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "died",
+            "columnName": "died",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titles",
+            "columnName": "titles",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aliases",
+            "columnName": "aliases",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "father",
+            "columnName": "father",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mother",
+            "columnName": "mother",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "spouse",
+            "columnName": "spouse",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "houseId",
+            "columnName": "houseId",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ddb1b7a76c97beee2ff6a6587ba2d8e0')"
+    ]
+  }
+}
