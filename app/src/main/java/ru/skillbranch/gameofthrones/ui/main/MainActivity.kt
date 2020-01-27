@@ -1,11 +1,11 @@
 package ru.skillbranch.gameofthrones.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
 import ru.skillbranch.gameofthrones.R
 import ru.skillbranch.gameofthrones.repositories.RootRepository
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
 
     val repository = RootRepository
