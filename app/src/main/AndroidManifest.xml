@@ -3,7 +3,10 @@
         xmlns:tools="http://schemas.android.com/tools"
         package="ru.skillbranch.gameofthrones">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+            android:name=".GOTApplication"
             android:allowBackup="true"
             android:appComponentFactory="androidx"
             android:icon="@mipmap/ic_launcher"
